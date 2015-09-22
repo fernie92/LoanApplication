@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g1k-h8-3MC">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Original Amount View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="OriginalAmountViewController" customModule="Loan_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9ca-i2-bKA">
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="u6w-nf-Q6Z"/>
+                                    <constraint firstAttribute="width" constant="200" id="xmY-l8-N7q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the original loan amount." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGV-FW-AUb">
+                                <rect key="frame" x="183" y="237" width="235" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMF-8I-fxx">
+                                <rect key="frame" x="284" y="342" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YBk-k3-Lao"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dMF-8I-fxx" firstAttribute="top" secondItem="9ca-i2-bKA" secondAttribute="bottom" constant="27" id="55a-Lg-HHJ"/>
+                            <constraint firstAttribute="centerY" secondItem="9ca-i2-bKA" secondAttribute="centerY" id="AR6-co-DXh"/>
+                            <constraint firstItem="9ca-i2-bKA" firstAttribute="top" secondItem="iGV-FW-AUb" secondAttribute="bottom" constant="27" id="OkS-y1-sZg"/>
+                            <constraint firstAttribute="centerX" secondItem="dMF-8I-fxx" secondAttribute="centerX" id="aRM-Ie-0vm"/>
+                            <constraint firstAttribute="centerX" secondItem="9ca-i2-bKA" secondAttribute="centerX" id="aok-YE-h3j"/>
+                            <constraint firstAttribute="centerX" secondItem="iGV-FW-AUb" secondAttribute="centerX" id="ghf-aB-22T"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="K7b-97-OCL" appends="YES" id="o5o-3p-0Yy"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="yvr-MA-hlu"/>
+                    <connections>
+                        <outlet property="originalLoanAmountField" destination="9ca-i2-bKA" id="rzN-Cd-w0z"/>
+                        <segue destination="htU-Qm-fmA" kind="show" identifier="originalLoanAmountSegue" id="hUg-mw-9n1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="K7b-97-OCL">
+                    <connections>
+                        <action selector="screenTouchGesture:" destination="vXZ-lx-hvc" id="Kvm-fI-sdQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1581" y="1087"/>
+        </scene>
+        <!--Loan Term View Controller-->
+        <scene sceneID="F1r-yX-RZv">
+            <objects>
+                <viewController id="htU-Qm-fmA" customClass="LoanTermViewController" customModule="Loan_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qFz-AT-uha"/>
+                        <viewControllerLayoutGuide type="bottom" id="qkl-36-ot1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a6U-Gl-2KI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pfS-kJ-1zk">
+                                <rect key="frame" x="225" y="285" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ivr-af-50j"/>
+                                    <constraint firstAttribute="height" constant="30" id="zHD-LV-Coq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the loan term." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sz-5X-Vkj">
+                                <rect key="frame" x="225" y="237" width="151" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeU-hB-bZZ">
+                                <rect key="frame" x="284" y="360" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="htU-Qm-fmA" eventType="touchUpInside" id="b4L-yH-WPB"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="neS-q6-CLJ">
+                                <rect key="frame" x="240" y="323" width="121" height="29"/>
+                                <segments>
+                                    <segment title="Months"/>
+                                    <segment title="Years"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="OeU-hB-bZZ" firstAttribute="top" secondItem="pfS-kJ-1zk" secondAttribute="bottom" constant="45" id="N0i-aR-0mx"/>
+                            <constraint firstAttribute="centerX" secondItem="OeU-hB-bZZ" secondAttribute="centerX" id="Oaa-XK-bWC"/>
+                            <constraint firstAttribute="centerX" secondItem="neS-q6-CLJ" secondAttribute="centerX" id="UE5-5C-ww1"/>
+                            <constraint firstItem="pfS-kJ-1zk" firstAttribute="top" secondItem="1sz-5X-Vkj" secondAttribute="bottom" constant="27" id="UhX-5Y-zbo"/>
+                            <constraint firstAttribute="centerX" secondItem="1sz-5X-Vkj" secondAttribute="centerX" id="VPi-1d-eRK"/>
+                            <constraint firstAttribute="centerY" secondItem="pfS-kJ-1zk" secondAttribute="centerY" id="cMk-Iq-P8x"/>
+                            <constraint firstItem="neS-q6-CLJ" firstAttribute="top" secondItem="pfS-kJ-1zk" secondAttribute="bottom" constant="8" id="he0-9X-0q7"/>
+                            <constraint firstAttribute="centerX" secondItem="pfS-kJ-1zk" secondAttribute="centerX" id="u3m-Ca-38z"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DEp-Ab-LLP" appends="YES" id="OSp-Xz-ms4"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="q3R-Bw-c8T"/>
+                    <connections>
+                        <outlet property="loanTermField" destination="pfS-kJ-1zk" id="5dS-c9-20k"/>
+                        <outlet property="monthYearSelector" destination="neS-q6-CLJ" id="zmT-Ic-5dZ"/>
+                        <segue destination="0Ng-6O-7kP" kind="show" identifier="loanInterestSegue" id="lJs-2i-tyz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Db-Fc-A8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DEp-Ab-LLP">
+                    <connections>
+                        <action selector="loanTermScreenGesture:" destination="htU-Qm-fmA" id="MGD-o0-3sa"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2256" y="1087"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HMn-AL-uwk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g1k-h8-3MC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCo-8W-fnU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="U5n-2m-AQS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJg-Wo-nvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="1087"/>
+        </scene>
+        <!--Loan Interest View Controller-->
+        <scene sceneID="Aea-8Z-Jhm">
+            <objects>
+                <viewController id="0Ng-6O-7kP" customClass="LoanInterestViewController" customModule="Loan_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wXD-Uw-rJm"/>
+                        <viewControllerLayoutGuide type="bottom" id="FsM-au-DPO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P5P-7G-dLm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0vB-DP-0ty">
+                                <rect key="frame" x="225" y="285" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OnN-Se-a0C"/>
+                                    <constraint firstAttribute="width" constant="150" id="fQa-Pj-Veb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the loan interest." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="La8-EP-tl8">
+                                <rect key="frame" x="214" y="237" width="173" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go0-ot-0wX">
+                                <rect key="frame" x="284" y="360" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="0Ng-6O-7kP" eventType="touchUpInside" id="LaO-N4-c8R"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lPo-9E-Quz">
+                                <rect key="frame" x="207" y="323" width="187" height="29"/>
+                                <segments>
+                                    <segment title="Fixed"/>
+                                    <segment title="Annual (APR)"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Go0-ot-0wX" firstAttribute="top" secondItem="0vB-DP-0ty" secondAttribute="bottom" constant="45" id="1f2-y5-Xuv"/>
+                            <constraint firstAttribute="centerY" secondItem="0vB-DP-0ty" secondAttribute="centerY" id="AKI-hO-BFZ"/>
+                            <constraint firstAttribute="centerX" secondItem="Go0-ot-0wX" secondAttribute="centerX" id="IRB-f8-GRU"/>
+                            <constraint firstAttribute="centerX" secondItem="La8-EP-tl8" secondAttribute="centerX" id="J03-X3-0ew"/>
+                            <constraint firstAttribute="centerX" secondItem="lPo-9E-Quz" secondAttribute="centerX" id="K17-rd-LBJ"/>
+                            <constraint firstAttribute="centerX" secondItem="0vB-DP-0ty" secondAttribute="centerX" id="OqG-sW-XvW"/>
+                            <constraint firstItem="lPo-9E-Quz" firstAttribute="top" secondItem="0vB-DP-0ty" secondAttribute="bottom" constant="8" id="bnt-kS-rcV"/>
+                            <constraint firstItem="0vB-DP-0ty" firstAttribute="top" secondItem="La8-EP-tl8" secondAttribute="bottom" constant="27" id="eD5-YD-FrG"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YSk-pQ-Zcn" appends="YES" id="8GN-AH-NS0"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="fixedOrAnnualSelector" destination="lPo-9E-Quz" id="qAB-he-nkB"/>
+                        <outlet property="loanInterestField" destination="0vB-DP-0ty" id="Vj6-R0-XWV"/>
+                        <segue destination="Tum-9p-QXL" kind="show" identifier="toCalculateSegue" id="5nh-av-hTZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7b-A9-Ctn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YSk-pQ-Zcn">
+                    <connections>
+                        <action selector="loanInterestScreenGesture:" destination="0Ng-6O-7kP" id="Kvv-DQ-Nwl"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2935" y="1087"/>
+        </scene>
+        <!--Calculation View Controller-->
+        <scene sceneID="wge-BA-ThZ">
+            <objects>
+                <viewController id="Tum-9p-QXL" customClass="CalculationViewController" customModule="Loan_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jhw-ng-Hmy"/>
+                        <viewControllerLayoutGuide type="bottom" id="N5B-Lx-Aj8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5u7-FD-gac">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original Loan Amount:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eam-PN-jbQ">
+                                <rect key="frame" x="16" y="176" width="172" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="Lzd-tm-33W"/>
+                                    <constraint firstAttribute="height" constant="21" id="VIt-zU-FQX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Term:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id9-Jo-VPM">
+                                <rect key="frame" x="16" y="205" width="172" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="75g-qI-xld"/>
+                                    <constraint firstAttribute="height" constant="21" id="dqJ-ws-tHb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Interest:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c94-Gd-hnH">
+                                <rect key="frame" x="16" y="234" width="172" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="9bv-UQ-P2T"/>
+                                    <constraint firstAttribute="height" constant="21" id="FZa-a7-JDH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYL-vt-HeC">
+                                <rect key="frame" x="196" y="176" width="388" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SSZ-Ma-tdH"/>
+                                    <constraint firstAttribute="width" constant="388" id="cpu-A1-Pit"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3O-Jh-j3N">
+                                <rect key="frame" x="196" y="205" width="388" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="388" id="XsH-t9-1cu"/>
+                                    <constraint firstAttribute="height" constant="21" id="uNZ-Ih-ZcL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-JU-UGH">
+                                <rect key="frame" x="196" y="234" width="388" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="388" id="WIK-eP-wEO"/>
+                                    <constraint firstAttribute="height" constant="21" id="vRE-tc-khk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Loan Value:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpp-Id-ZYs">
+                                <rect key="frame" x="16" y="289" width="172" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3uE-Gg-9b1"/>
+                                    <constraint firstAttribute="width" constant="172" id="K5P-Kn-GPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-bA-WfF">
+                                <rect key="frame" x="196" y="289" width="388" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="id9-Jo-VPM" firstAttribute="leading" secondItem="5u7-FD-gac" secondAttribute="leadingMargin" id="0a0-UE-5Cr"/>
+                            <constraint firstAttribute="centerY" secondItem="gpp-Id-ZYs" secondAttribute="centerY" id="0w7-Nc-2xe"/>
+                            <constraint firstItem="gpp-Id-ZYs" firstAttribute="leading" secondItem="5u7-FD-gac" secondAttribute="leadingMargin" id="BPP-Hk-C7t"/>
+                            <constraint firstItem="bYL-vt-HeC" firstAttribute="top" secondItem="jhw-ng-Hmy" secondAttribute="bottom" constant="112" id="Ebd-br-cen"/>
+                            <constraint firstItem="R3O-Jh-j3N" firstAttribute="leading" secondItem="id9-Jo-VPM" secondAttribute="trailing" constant="8" id="FlD-77-UjL"/>
+                            <constraint firstItem="R3O-Jh-j3N" firstAttribute="top" secondItem="bYL-vt-HeC" secondAttribute="bottom" constant="8" id="G5H-Wh-0Tn"/>
+                            <constraint firstItem="c94-Gd-hnH" firstAttribute="top" secondItem="id9-Jo-VPM" secondAttribute="bottom" constant="8" id="KzL-gj-mWu"/>
+                            <constraint firstItem="5SK-JU-UGH" firstAttribute="top" secondItem="R3O-Jh-j3N" secondAttribute="bottom" constant="8" id="Lav-I0-k0O"/>
+                            <constraint firstItem="R3O-Jh-j3N" firstAttribute="trailing" secondItem="5u7-FD-gac" secondAttribute="trailingMargin" id="VFM-OD-VC0"/>
+                            <constraint firstItem="bYL-vt-HeC" firstAttribute="trailing" secondItem="5u7-FD-gac" secondAttribute="trailingMargin" id="Z1U-rD-l4v"/>
+                            <constraint firstItem="5SK-JU-UGH" firstAttribute="trailing" secondItem="5u7-FD-gac" secondAttribute="trailingMargin" id="Zen-k3-TpF"/>
+                            <constraint firstItem="c94-Gd-hnH" firstAttribute="leading" secondItem="5u7-FD-gac" secondAttribute="leadingMargin" id="cdO-28-JAN"/>
+                            <constraint firstItem="bYL-vt-HeC" firstAttribute="leading" secondItem="Eam-PN-jbQ" secondAttribute="trailing" constant="8" id="eOS-Tt-BSX"/>
+                            <constraint firstItem="Eam-PN-jbQ" firstAttribute="leading" secondItem="5u7-FD-gac" secondAttribute="leadingMargin" id="ho5-5P-mdN"/>
+                            <constraint firstItem="C8z-bA-WfF" firstAttribute="trailing" secondItem="5u7-FD-gac" secondAttribute="trailingMargin" id="m8n-MJ-156"/>
+                            <constraint firstAttribute="centerY" secondItem="C8z-bA-WfF" secondAttribute="centerY" id="pVh-5y-PFB"/>
+                            <constraint firstItem="Eam-PN-jbQ" firstAttribute="top" secondItem="jhw-ng-Hmy" secondAttribute="bottom" constant="112" id="tKa-TW-fGb"/>
+                            <constraint firstItem="id9-Jo-VPM" firstAttribute="top" secondItem="Eam-PN-jbQ" secondAttribute="bottom" constant="8" id="tKb-Nf-aP3"/>
+                            <constraint firstItem="C8z-bA-WfF" firstAttribute="leading" secondItem="gpp-Id-ZYs" secondAttribute="trailing" constant="8" id="uWK-66-gyr"/>
+                            <constraint firstItem="5SK-JU-UGH" firstAttribute="leading" secondItem="c94-Gd-hnH" secondAttribute="trailing" constant="8" id="yAX-lu-a1J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loanInterestLabel" destination="5SK-JU-UGH" id="xHp-G5-oi3"/>
+                        <outlet property="loanTermLabel" destination="R3O-Jh-j3N" id="okB-T3-JvM"/>
+                        <outlet property="originalLoanAmountLabel" destination="bYL-vt-HeC" id="erT-Mf-5Ro"/>
+                        <outlet property="totalLoanValueLabel" destination="C8z-bA-WfF" id="6ot-lC-XI2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQP-fT-jPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3611" y="1087"/>
+        </scene>
+    </scenes>
+</document>
